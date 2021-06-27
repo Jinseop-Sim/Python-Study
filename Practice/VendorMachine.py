@@ -15,6 +15,8 @@ welc = 5
 while num != 4:
     print(message)
     num = eval(input())
+    if(num > 4):
+        print("I dunno what's that mean :<")
     if(money < 0):
         print("You don't have any money .. :(")
         break;
