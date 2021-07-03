@@ -1,6 +1,6 @@
 select = list(map(int, input().split()))
 for i in range(0, len(select)):
-    min = i;
+    min = i
     for j in range(i+1, len(select)):
         if(select[j] < select[min]):
             min = j
