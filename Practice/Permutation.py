@@ -18,6 +18,7 @@ while(jndex < n-1 and perm[jndex+1] > perm[index-1]):
 """
 이 구간의 코드는 A[i-1] < A[j]가 되는 가장 큰 값인 j를 찾는 코드이다.
 "가장 큰" j 값을 찾아야 하므로 똑같이 for문이 아닌 while 문으로 제일 마지막까지 반복문을 돌린다.
+jndex = index가 아닌 index-1인 이유는, 마지막에 while문 안의 jndex += 1 때문에 마지막에 jndex가 하나 더 증가해버리기 때문이다.
 """
 perm[index-1], perm[jndex] = perm[jndex], perm[index-1]
 
