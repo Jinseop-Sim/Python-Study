@@ -11,7 +11,7 @@
 - 그리고 그 이후 단계에서 5와 11중에 11을 골라 해를 24로 구할 것이다.  
 - 하지만 그림을 보면 알 수 있듯이 문제 전체의 최적해는 107이 되어야 한다. 따라서 전체적인 최적해를 보장하지는 않는다.  
 
-## Baekjoon 11047 : 동전
+### Baekjoon 11047 : 동전
 > 매우 간단한 그리디 알고리즘 연습 문제이다.  
 
 ![캡처](https://user-images.githubusercontent.com/71700079/126979975-aad6ee37-8d28-46c7-b664-276e1c22eaf5.PNG)  
@@ -61,3 +61,33 @@ queue.put((2, 'World'))
 
 queue.get() # 우선순위에 따라 item을 삭제하는 명령어
 ```
+
+### Baekjoon 1715 : 카드 정렬하기  
+> 매우 간단한 우선순위 큐를 사용해 풀 수 있는 문제이다.
+
+![캡처](https://user-images.githubusercontent.com/71700079/127006070-400653ff-0429-4de8-81cd-1750bfd133a9.PNG)  
+
+```python
+import sys
+from queue import PriorityQueue
+
+num = int(sys.stdin.readline())
+queue = PriorityQueue()
+for i in range(num):
+    queue.put(int(sys.stdin.readline()))
+
+val = 0
+
+while True:
+    if(queue.qsize() == 1):
+        break
+    a = queue.get()
+    b = queue.get()
+    val += (a+b)
+    queue.put(a+b)
+
+print(val)
+```
+- 생각의 전개는 이러하다. 우리는 최소한의 비교를 만들어야 하기 때문에, 제일 작은 값끼리 먼저 더해 나가야 한다.
+- 마치 그리디 알고리즘의 진행과 유사하다. 그러기 위해서 우선순위 큐에 집어 넣은다음, 그냥 두 정수를 get() 해주면, 알아서 제일 작은 두 값이 나온다.
+- 그 둘을 더하고 다시 집어넣은 뒤, 또 두 정수를 get() 해서 더해주고 qsize() method를 이용해서 큐의 길이가 1이 되면 탈출하도록 한다.
