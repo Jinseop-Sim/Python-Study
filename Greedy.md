@@ -41,3 +41,23 @@ print(cnt)
 - 그 다음으로 200을 나눌 수 있는 100원으로 나누어 200 // 100, cnt = 6이 된다.
 - 이 알고리즘이 그리디 알고리즘인 이유는 1000원을 만난 상황에서 최적해 4000원, 100원을 만난 상황에서 최적해 200원, 그리고 종료.
 - 4200원을 만들 수 있는 다른 경우는 전혀 생각을 하지 않기 때문에 그리디 알고리즘인 것이다.
+
+## 부록 : Priority Queue(우선순위 큐)
+> 큐는 원래 FIFO(선입 선출)로 작동을 하지만, 우선순위 큐는 FIFO가 아닌 우선순위에 따라 삭제의 순서가 결정된다.
+> 큐나 스택은 O(1)의 시간 복잡도를 갖지만, 우선순위 큐는 O(logN)의 시간복잡도를 갖는다.
+> heapq 라는 모듈을 통해서 구현되어 있는 모듈이다. 즉 heap이 O(logN)의 시간복잡도를 가지므로, 우선순위 큐 또한 그렇다.
+
+```python
+from queue import PriorityQueue # 이와 같이 모듈을 import한다.
+
+queue = PriorityQueue() # 이와 같이 선언한다.
+limitedqueue = PriorityQueue(maxsize=10) # 이는 크기가 제한된 우선순위 큐의 선언이다.
+
+queue.put(1) # 이는 정수를 item으로 넣는 경우, 작은 정수부터 우선순위를 갖는다.
+queue.put(2)
+
+queue.put((1, 'Hello')) # 이는 tuple을 item으로 넣는 경우로, 우선순위를 매겨주어야 한다.
+queue.put((2, 'World'))
+
+queue.get() # 우선순위에 따라 item을 삭제하는 명령어
+```
