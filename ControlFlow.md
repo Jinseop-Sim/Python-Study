@@ -115,3 +115,13 @@ print(sum)
 그리고 for문과 같이 대표적으로 사용될 수 있는 함수가 바로 range() 함수이다.  
 for 문 안에서 사용될 iterator의 범위를 지정해서 사용하도록 하는 함수이며  
 위는 range 함수의 예를 가장 잘 표현한 구구단과 1부터 100까지의 합 코드이다.  
+
+### 부록 : range() function
+- range() 함수의 원래 형태는 range(start, stop, step)으로 이루어져 있다.
+- 따라서 보통 우리가 사용하는 range 함수의 의미는 아래와 같다.
+```python
+for i in range(10) # Stop = 10, 배정하지 않은 Start와 Step은 자동으로 0과 1이 된다. 즉, 0~9까지 순회.
+for i in range(2, 10) # Start = 2, Stop = 10, 배정하지 않은 Step은 자동으로 1이 된다. 즉, 2~9까지 순회.
+for i in range(2, 10, 2) # Start = 2, Stop = 10, Step = 2, 이렇게 되면 2, 4, 6, 8 이 된다.
+for i in range(10, 0, -1) # Start = 10, Stop = 0, Step = -1, 물론 역순도 가능하다. 10에서 1 까지 1씩 빼며 내려온다.
+```
