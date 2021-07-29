@@ -125,3 +125,7 @@ for i in range(2, 10) # Start = 2, Stop = 10, 배정하지 않은 Step은 자동
 for i in range(2, 10, 2) # Start = 2, Stop = 10, Step = 2, 이렇게 되면 2, 4, 6, 8 이 된다.
 for i in range(10, 0, -1) # Start = 10, Stop = 0, Step = -1, 물론 역순도 가능하다. 10에서 1 까지 1씩 빼며 내려온다.
 ```
+- 여기에 추가로 reversed() 함수가 존재한다!
+```python
+for i in reversed(range(1, 11)) # 이렇게 해도 10부터 1까지 거꾸로 출력한다.
+```
