@@ -49,10 +49,10 @@ def backT(index):
         (i, j) = zero[index]  # (i, j)에 zero 배열에 있는 빈칸의 좌표를 받아온다.
         check = checking(i, j) #  checking 함수를 실행시킨 후 return된 숫자를 check 변수에 저장한다.
 
-        for num in check: # return된 check 배열 내에서
+        for num in check: # return된 check 배열 내의 숫자를 sdoku 배열 내의 해당 좌표에 대입한다.
             sdoku[i][j] = num
-            backT(index+1)
-            sdoku[i][j] = 0
+            backT(index+1) # zero 배열 내의 좌표를 모두 완수할 때 까지 backtracking.
+            sdoku[i][j] = 0  # 얘는 잘못된 경우로 갔을 때 이전단계로 돌아가도록 만든다.
 
 backT(0)
 
