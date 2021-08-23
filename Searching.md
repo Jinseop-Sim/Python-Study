@@ -53,6 +53,51 @@ ex) 1 3 2 / 2 3 1 / 3 2 1
 > 하지만 아래로 depth가 깊은 상황에서는 BFS보다 매우 빠른 속도로 탐색이 가능하다.  
 
 ![캡처](https://user-images.githubusercontent.com/71700079/124910125-322b2700-e026-11eb-9055-874cf5ef4d51.PNG)
+
+- 대표 예시 문제 : 2667 - 단지번호 붙이기
+```python
+n = int(input())
+home = []
+danzi = []
+dx = [-1, 1, 0, 0] # 좌 우 위 아래
+dy = [0, 0, 1, -1] # 좌 우 위 아래
+# 좌 우 위 아래를 확인해야하는 좌표문제는 dx, dy 리스트를 따로 만드는게 좋다!
+cnt = 0
+
+for _ in range(n):
+    apt = list(map(int,input()))
+    home.append(apt)
+"""
+방문한 곳은 # 으로 바꾸어 더 이상 1이 아닌 것으로 만든다.
+1이 아니라면 방문했던 #은 dfs 함수가 작동하지 않는다. 
+즉, 인접 단지만 계속 dfs가 작동하며 더 이상 인접 아파트가 없을 시, cnt가 초기화 되며
+다음 1이 있는 좌표를 찾아서 다시 dfs 탐색을 시작한다.
+"""
+
+def dfs(x,y):
+    global cnt
+    home[x][y] = '#'
+    cnt += 1
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if 0 <= nx < n and 0 <= ny < n and home[nx][ny] == 1:
+            home[nx][ny] = '#'
+            dfs(nx, ny)
+    return cnt
+
+for a in range(n):
+    for b in range(n):
+        if home[a][b] == 1:
+            cnt = 0
+            danzi.append(dfs(a,b))
+
+print(len(danzi))
+danzi.sort()
+for i in danzi:
+    print(i)
+````
+
 ### BFS(Breadth-First Searching)
 > 계층, 깊이 별로 순환탐색을 진행하는 넓이 우선 탐색 기법이다.  
 > 깊이마다 노드들을 Queue에 차례대로 집어넣고 꺼내어 순환하는 형태이다. 즉 Queue를 이용한다.  
@@ -64,7 +109,7 @@ ex) 1 3 2 / 2 3 1 / 3 2 1
 > 해를 찾아가는 도중에 이 노드가 해와 상관이 없겠다 싶으면 바로 가지치기를 하도록 하는 알고리즘  
 > 더 이상 앞으로 나가지 않아도 되므로 반복문의 반복 횟수를 줄일 수 있다.  
 > 주로 DFS 문제에서 전혀 답이 될 수 없는 경우는 반복하지 않도록 조건문을 걸어줌으로써 Bactracking을 구현한다.  
-> 대표적 예시 : 4-Queens Problem
+> 대표적 예시 : N-Queens Problem
 
 - Promising : 해가 될 가능성이 있다. 유망하다.
-- Pruning : 해가 될 가능성이 없다. 가지치기한다.
+- Pruning : 해가 될 가능성이 없다. 가지치기한다. (이 개념이 매우 중요하다!)
