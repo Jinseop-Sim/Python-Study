@@ -4,7 +4,6 @@ h, w = map(int, sys.stdin.readline().split())
 space = list(map(int, sys.stdin.readline().split()))
 
 maxH = 1
-maxL = 0
 
 for i in range(len(space)): # 얘는 max index 기준으로 왼쪽에 있는 애들의 값 계산
     if maxH < space[i]:
