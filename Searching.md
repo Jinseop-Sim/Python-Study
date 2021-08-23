@@ -106,6 +106,48 @@ for i in danzi:
 
 ![캡처](https://user-images.githubusercontent.com/71700079/124910382-7e766700-e026-11eb-9717-77396aa5a974.PNG)
 
+- 대표 예시 문제 : 2667 - 단지번호 붙이기 BFS로 풀기.
+```python
+from collections import deque
+
+def bfs(x, y):
+    global cnt
+    queue.append([x,y])
+    home[x][y] = '#'
+    cnt += 1
+
+    while queue:
+        x, y = queue.popleft()
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if 0 <= nx < n and 0 <= ny < n and home[nx][ny] == 1:
+                queue.append([nx, ny])
+                cnt += 1
+                home[nx][ny] = '#'
+    return cnt
+
+n = int(input())
+queue = deque()
+home = []
+danzi = []
+dx = [-1, 1, 0, 0]
+dy = [0, 0, 1, -1]
+cnt = 0
+
+for _ in range(n):
+    apt = list(map(int, input()))
+    home.append(apt)
+
+for i in range(n):
+    for j in range(n):
+        if home[i][j] == 1:
+            cnt = 0
+            danzi.append(bfs(i,j))
+
+print(*danzi)
+````
+
 ### Backtracking
 > 해를 찾아가는 도중에 이 노드가 해와 상관이 없겠다 싶으면 바로 가지치기를 하도록 하는 알고리즘  
 > 더 이상 앞으로 나가지 않아도 되므로 반복문의 반복 횟수를 줄일 수 있다.  
@@ -114,3 +156,5 @@ for i in danzi:
 
 - Promising : 해가 될 가능성이 있다. 유망하다.
 - Pruning : 해가 될 가능성이 없다. 가지치기한다. (이 개념이 매우 중요하다!)
+
+- 대표 예시 문제 : 9663 - N-Queens Problem
