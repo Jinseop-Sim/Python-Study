@@ -7,9 +7,9 @@ res = []
 iter = 0
 
 def sign(idx):
-    s = 0
+    sum = 0
     for i in range(idx, -1, -1):
-        s += res[i]
+        sum += res[i]
         if arr[i][idx] == '+' and s <= 0:
             return 0
         if arr[i][idx] == '0' and s != 0:
