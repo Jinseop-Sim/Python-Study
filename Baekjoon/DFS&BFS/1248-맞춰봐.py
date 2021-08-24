@@ -10,11 +10,11 @@ def sign(idx):
     sum = 0
     for i in range(idx, -1, -1):
         sum += res[i]
-        if arr[i][idx] == '+' and s <= 0:
+        if arr[i][idx] == '+' and sum <= 0:
             return 0
-        if arr[i][idx] == '0' and s != 0:
+        if arr[i][idx] == '0' and sum != 0:
             return 0
-        if arr[i][idx] == '-' and s >= 0:
+        if arr[i][idx] == '-' and sum >= 0:
             return 0
     return 1
 
