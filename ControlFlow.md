@@ -117,6 +117,20 @@ print(sum)
 for 문 안에서 사용될 iterator의 범위를 지정해서 사용하도록 하는 함수이며  
 위는 range 함수의 예를 가장 잘 표현한 구구단과 1부터 100까지의 합 코드이다.  
 
+```python
+firstName = input()
+foundFlag = False
+infile = open('Presidents.txt', 'r')
+for i in infile:
+  if line.startswith(firstName + ' '):
+    print(line.strip())
+    foundFlag = True
+infile.close()
+if not foundFlag:
+  print('No president')
+```
+위와 같이 파일을 한 줄씩 읽어오는 역할로 for문을 사용할 수도 있다.  
+
 ### 부록 : range() function
 - range() 함수의 원래 형태는 range(start, stop, step)으로 이루어져 있다.
 - 따라서 보통 우리가 사용하는 range 함수의 의미는 아래와 같다.
