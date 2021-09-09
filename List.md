@@ -1,6 +1,15 @@
 # Python's Array, LIST!
 ---
 ## List
+- How to copy List?
+```python
+x = [1,2,3,4]
+y = x
+x.append(5)
+print(y) # 이렇게 코드를 실행해보면 y도 [1,2,3,4,5]로 바뀜을 알 수 있다.
+z = x[:] # 이렇게 Full Slice를 이용하면 X를 바꾸어도 바뀌지 않는다.
+w = x.copy() # 이렇게 copy() method를 이용할 수도 있다.
+```
 
 ## Tuple
 > 괄호로 묶이는 형태의 자료형이다.  
