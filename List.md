@@ -3,6 +3,21 @@
 ## List
 
 ## Tuple
+> 괄호로 묶이는 형태의 자료형이다.  
+> 다른 자료형들과 다른 점은 delete, insert, append 등의 메서드가 없다.  
+
+- How to declare Tuple?
+```python
+zoo = 'fox', 'monkey', 'zebra' # 이런 선언 방식 때문에 숫자를 1,000,000 이라고 적을 경우, (1,0,0) Tuple이 저장된다.
+ano_zoo = ('bear', 'lion') # 두 가지의 선언 모두 가능하다.
+```
+
+- How to use Tuple?
+```python
+zoo = 'fox', 'monkey', 'zebra'
+new_cage = 'bear', 'lion', zoo # 이런 식으로 선언을 하면, ('bear', 'lion', ('fox', 'monkey', 'zebra')) 가 된다.
+print(new_cage[0], new_cage[1], new_cage[2][1]) # 이 코드를 실행해보면 순서대로 bear, lion, monkey가 나오게 된다. Tuple에 대한 접근 방식.
+```
 
 ## Dictionary
 > Key와 Value를 통해 값을 정리해놓는 방식의 자료형이다.  
