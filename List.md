@@ -17,6 +17,7 @@ ano_zoo = ('bear', 'lion') # 두 가지의 선언 모두 가능하다.
 zoo = 'fox', 'monkey', 'zebra'
 new_cage = 'bear', 'lion', zoo # 이런 식으로 선언을 하면, ('bear', 'lion', ('fox', 'monkey', 'zebra')) 가 된다.
 print(new_cage[0], new_cage[1], new_cage[2][1]) # 이 코드를 실행해보면 순서대로 bear, lion, monkey가 나오게 된다. Tuple에 대한 접근 방식.
+print(len(new_cage)), len(new_cage[2])) # 이 코드를 실행해보면 순서대로 3, 3이 나오게 된다. new_cage[2] == zoo 인 셈이다.
 ```
 
 ## Dictionary
