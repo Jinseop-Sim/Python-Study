@@ -11,6 +11,17 @@ z = x[:] # 이렇게 Full Slice를 이용하면 X를 바꾸어도 바뀌지 않�
 w = x.copy() # 이렇게 copy() method를 이용할 수도 있다.
 ```
 
+- List Comprehension
+```python
+def square(x):
+  return (int(x) ** 2)
+list = ['2', '5', '6', '7']
+[int(x) for x in list] # [2,5,6,7]
+[square(x) for x in list] # [4,25,36,49] 이런 Comprehension이 가능하다.
+
+[square(x) for x in list if int(x)%2 == 1] # [25, 49] 이렇게 조건부까지 가능하다.
+```
+
 ## Tuple
 > 괄호로 묶이는 형태의 자료형이다.  
 > 다른 자료형들과 다른 점은 delete, insert, append 등의 메서드가 없다.  
