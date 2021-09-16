@@ -60,3 +60,32 @@ def createNewFile(listName, oldFileName, newFileName):
   createNewFile(vicePresList, "USPres.txt", "Both.txt")
   ```
   - 위의 코드는 파일로 입력을 받아서, 출력 파일을 만드는 코드이다.
+
+### Adding Lines to Files
+```python
+outfile = open("FirstPresidents.txt", 'a')
+list1 = ["Madison\n", "Monroe\n"]
+outfile.writelines(list1)
+outfile.write("John Q\n")
+outfile.close()
+```
+- Append를 시킬 경우, 'a'의 권한으로 파일을 열어야한다.
+- 사용되는 메서드는 write 권한의 메서드와 동일하지만 둘의 차이는 write 권한은 아예 초기화를 시키고 새로 쓴다는 것이다.
+- 하지만 'a' 권한은 이미 있는 내용에 append만 시키는 것이라 초기화되지 않는다.
+
+### Altering Items in Files
+```python
+import os
+
+os.remove(filenName) # 원하는 파일을 지우는 method
+os.rename(oldFileName, newFileName) # 원하는 파일의 이름을 바꾸는 method
+os.path.isfile(fileName) # 원하는 파일이 해당경로 내에 있는지 확인하는 method, boolean type을 return한다.
+
+if os.path.isfile("ABC.txt"): # 해당 경로내에 ABC.txt가 없다면, 새로 생성하는 코드.
+  print("File already exists.")
+else:
+  infile = open("ABC.txt", 'w')
+  infile.write("a\nb\nc\n")
+  infile.close()
+```
+- os 패키지를 import해서 다양한 위와 같은 메서드들을 이용할 수 있다.
