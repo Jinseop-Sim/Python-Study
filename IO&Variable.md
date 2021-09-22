@@ -19,8 +19,17 @@ b, c = map(int, input().split())
 ## How to Output?
 ```python
 print("Hello World")
+propmt = ```this is message of prompt.
+You can't see meeeee.
+```
 ```
 파이썬은 C언어와는 달리 그냥 print() 함수를 이용해서 출력이 가능하다.  
+긴 문장을 출력하고 싶으면, 위의 Prompt 같이 ```으로 열고 ``` 으로 닫는 문장을 이용한다.  
+
+### Formatting
+```python
+
+```
 
 ## How to Declare Variable?
 ```python
