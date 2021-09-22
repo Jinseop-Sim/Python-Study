@@ -20,16 +20,33 @@ b, c = map(int, input().split())
 ```python
 print("Hello World")
 propmt = ```this is message of prompt.
-You can't see meeeee.
-```
+You can't see meeeee.```
 ```
 파이썬은 C언어와는 달리 그냥 print() 함수를 이용해서 출력이 가능하다.  
 긴 문장을 출력하고 싶으면, 위의 Prompt 같이 ```으로 열고 ``` 으로 닫는 문장을 이용한다.  
 
+### Methods
+```python
+str = "Python"
+str.upper() # 'PYTHON'
+str.lower() # 'python'
+str.count('th') # 1, th가 문자열에 몇 번 등장하는가?
+'coDE'.capitalize() # Code, 제일 앞을 대문자로 만들고 나머지 소문자로.
+'beN huR".title() # Ben Hur, 제목 처럼 단어 시작의 제일 앞만 대문자로.
+'ab    '.rstrip() # 공백 제거
+```
+
 ### Formatting
 ```python
-
-```
+age = 20
+name = 'Hellboy'
+print(`{0} was {1} years old when he wrote the book A Byte of Python.`.format(name, age))
+print('{name} wrote {book}'.format(name = "Bobby max", book = "A Byte of Python"))
+print("{0:^5}{1:<20}{2:>3}".format("Rank", "Player", "HR"))
+print("{0:^5}{1:<20}{2:>3}".format(1, "Barry Bonds", 762))
+```  
+위와 같이 작성을 하면, 0과 1 자리에 순서대로 name과 age가 들어간다. 물론 변수 이름으로 넣어도 가능하다.  
+그 아래 줄은, < ^ > 문자들을 이용해 각 요소들을 정렬하는 방식이다.  
 
 ## How to Declare Variable?
 ```python
