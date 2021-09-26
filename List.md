@@ -83,4 +83,24 @@ del dict['name'] # dictionary[key] 의 형태로 del 함수를 이용하면 원�
   - Dictionary를 사용할 때, 중복되는 key 값이 존재하면 하나를 제외한 모두가 무시되므로 조심해야 한다.
   - Key에는 List가 들어갈 수 없다.
   - 물론 Value 값에는 무엇이든 들어갈 수 있다.
-## Set
+
+## Sets
+- 순서 없이 모인 items들의 집합이다. ==> 순서가 없어서 정렬기능이 의미가 없다.
+  - 그래서 sorted(set) 함수를 이욯아면 List로 바꿔서 정렬된 채 출력해준다.
+- 절대 item이 중복되지 않는다.
+- 내부에 무엇이든 포함할 수 있고, __Tuple__ 또한 포함이 가능하지만
+- __List나 다른 Sets 들은 포함될 수 없다.__
+- List, Tuple, Set 3가지는 서로서로 Typecasting을 통해 왔다갔다 할 수 있다!
+```python
+bri = {'brazil', 'russia', 'india'}
+sorted(bri) # ['brazil', 'india', 'russia']
+'india' in bri # True
+'usa' in bri # False
+bric = bri.copy()
+bric.add('China') # 'China' 원소가 추가된다.
+bri.remove('russia') # bri.discard() 도 동일한 기능을 한다.
+bric.issuperset(bri) # bric가 bri에 포함이 되는가? bri.issubset(bric) 도 동일한 기능을 한다.
+bri & bric # 교집합을 출력한다. bri.intersection(bric) 도 가능하다!
+bric - bri # 차집합을 출력한다. bri.difference(bric) 도 가능하다!
+bric | bri # 합집합을 출력한다. bri.union(bric) 도 가능하다!
+```
