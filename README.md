@@ -6,3 +6,5 @@
 <br/>
 
 ### Algorithm Study with Baekjoon & PYTHON!
+
+- [AI Programming with Python](https://github.com/Jinseop-Sim/PNU-AI-Programming)
